@@ -1,0 +1,4 @@
+django==5.1.7
+django-redis==5.4.0
+django-redis-cache==2.0.0
+redis==3.0.0
