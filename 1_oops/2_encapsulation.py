@@ -5,6 +5,8 @@ Encapsulation:
 - In Python, encapsulation can be achieved by using private attributes and methods.
 - Private attributes and methods are denoted by a double underscore prefix (__) in their names.
 - Private attributes and methods are not accessible from outside the class.
+- Protected attributes and methods are accessible within the class and its subclasses (denoted by a single underscore prefix).
+- Public attributes and methods are accessible from outside the class.
 - However, they can be accessed within the class itself.
 - Encapsulation helps in data hiding and prevents accidental modification of data.
 
@@ -18,13 +20,13 @@ class BankAccount:
     def __init__(self, balance):
         self._balance = balance  # Using a single underscore for "protected"
 
-    def deposit(self, amount):
+    def _deposit(self, amount):
         if amount > 0:
             self._balance += amount
 
     def get_balance(self):
         return self._balance
-
+    
 account = BankAccount(1000)
-account.deposit(500)
+account._deposit(500)
 print(account.get_balance()) #output 1500

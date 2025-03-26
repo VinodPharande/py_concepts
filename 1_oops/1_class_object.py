@@ -4,7 +4,6 @@ Class and Object:
 - Class is a blueprint for creating objects.
 - An object is an instance of a class.
 - A class defines the attributes and methods common to all objects of a certain kind.
-- An object is a specific instance of a class.
 - Objects can have unique attributes and methods.
 - Classes and objects are fundamental concepts in object-oriented programming (OOP).
 
