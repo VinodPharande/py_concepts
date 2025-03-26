@@ -30,6 +30,7 @@ class Lion(Animal):
         print(f"{self.name}: Roar!")
 
 def animal_sound(animal):
+    # This function acts as a common interface
     animal.speak()
 
 my_lion = Lion("Simba")
