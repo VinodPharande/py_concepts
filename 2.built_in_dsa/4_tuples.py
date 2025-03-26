@@ -1,4 +1,21 @@
 """
+4. Tuples
+Definition: Ordered and immutable (cannot be modified after creation) collection of items.
+
+Key Features:
+
+Often used for fixed data, like coordinates or database records.
+
+More memory-efficient than lists.
+
+Example:
+
+python
+my_tuple = (10, 20, "Vinod")
+my_tuple[0]  # Accesses the first element (10)
+Common Methods: .count(), .index().
+
+
 Exercise 1: Create a tuple with 5 numbers (e.g., (10, 20, 30, 40, 50)). Write functions to:
 
 Find the index of a specific number (e.g., 30).
@@ -20,9 +37,6 @@ def tuple_operations():
     # Count occurrences of a number
     count_10 = my_tuple.count(10)
     print("Count of 10:", count_10)
-
-
-
 
 def swap_coordinates():
     coordinates = (4, 5)

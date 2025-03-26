@@ -1,4 +1,21 @@
 """
+2. Dictionaries
+Definition: Unordered and mutable collection of key-value pairs.
+
+Key Features:
+
+Keys are unique, while values can be duplicated.
+
+Used for mapping or associating data (e.g., user profile: name -> "Vinod").
+
+Example:
+
+python
+my_dict = {"name": "Vinod", "age": 30, "location": "Ilford"}
+my_dict["age"]      # Accesses the value associated with the key 'age'
+my_dict["hobby"] = "Coding"  # Adds a new key-value pair
+Common Methods: .keys(), .values(), .items().
+
 Exercise 1: Create a dictionary to store information about 3 students, where each key is the student’s name, and the value is their score. Write a function to:
 
 Add a new student and score.
@@ -31,7 +48,6 @@ def student_scores():
     highest_score = max(students.values())
     top_students = [name for name, score in students.items() if score == highest_score]
     print("Top Student(s):", top_students, "with score", highest_score)
-
 
 def fruit_prices():
     fruits = {"apple": 2, "banana": 1, "cherry": 3}

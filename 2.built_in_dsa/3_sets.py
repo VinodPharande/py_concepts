@@ -1,4 +1,21 @@
 """
+3. Sets
+Definition: Unordered and mutable collection of unique items.
+
+Key Features:
+
+Eliminates duplicates automatically.
+
+Useful for operations like union, intersection, and difference.
+
+Example:
+
+python
+my_set = {1, 2, 3, 3, 4}  # Duplicate 3 will be removed
+my_set.add(5)  # Adds an item
+my_set.remove(2)  # Removes an item
+Common Methods: .add(), .remove(), .union(), .intersection().
+
 Exercise 1: Given two sets:
 
 set1 = {1, 2, 3, 4}
@@ -36,8 +53,6 @@ def set_operations():
     
     # Subset check
     print("Is set1 a subset of set2?", set1.issubset(set2))
-
-
 
 def set_modifications():
     my_set = {1, 2, 3, 4, 5}
