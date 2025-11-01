@@ -42,5 +42,15 @@ class Square(Shape):
 my_circle = Circle(5)
 my_square = Square(4)
 
-print(my_circle.area()) #output 78.5
-print(my_square.area()) #output 16
+# This is not abstractraction, because we are calling area() directly, i.e. uses an object from the object's specific implementation
+# print(my_circle.area()) #output 78.5
+# print(my_square.area()) #output 16
+
+# Abstraction in Action:
+def calculate_area(sh: Shape): #type hinting showing the interface.
+    print("Calculating areas...")
+    return sh.area()
+
+# We can pass either a Circle or Square to calculate_area
+print("Area of circle:", calculate_area(my_circle))
+print("Area of square:", calculate_area(my_square))
