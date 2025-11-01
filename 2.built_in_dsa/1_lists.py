@@ -38,6 +38,8 @@ Count how many words start with the letter "a."
 Replace all occurrences of "banana" with "blueberry."
 """
 
+import re
+
 def list_operations():
     my_list = [5, 10, 15, 20, 25]
     print("Original List:", my_list)
@@ -67,7 +69,58 @@ def word_operations():
     words = ["blueberry" if word == "banana" else word for word in words]
     print("After Replacement:", words)
 
+def middle_chars(word):
+    """Return the middle character(s) of a word using simple slicing.
+    - odd length -> single middle char
+    - even length -> two middle chars
+    """
+    n = len(word)
+    if n == 0:
+        return ""
+    mid = n // 2
+    if n % 2 == 1:
+        return word[mid]
+    return word[mid - 1 :mid + 1]
 
+# --- simple regex-based alternative ---
+def middle_chars_regex(word):
+    """Return the middle character(s) using a single regex.
+    Works for both odd (1 char) and even (2 chars) lengths.
+    """
+    L = len(word)
+    if L == 0:
+        return ""
+    half = L // 2
+    if L % 2 == 1:
+        # e.g. for length 5, capture the 3rd char: ^.{2}(.).{2}$
+        pattern = rf'^.{{{half}}}(.).{{{half}}}$'
+    else:
+        # e.g. for length 6, capture the middle two chars: ^.{2}(.{2}).{2}$
+        left = half - 1
+        pattern = rf'^.{{{left}}}(.{{2}}).{{{left}}}$'
+    m = re.match(pattern, word)
+    return m.group(1) if m else ""
+
+# Demos (simplified: only compare slice vs regex middle methods)
+def middle_and_like_demos():
+    words = ["apple", "application", "puppy", "happy", "pppp", "map", "top"]
+    print("Words:", words)
+
+    for w in words:
+        print(
+            w,
+            "-> middle (slice):", middle_chars(w),
+            "| middle (regex):", middle_chars_regex(w)
+        )
+
+middle_and_like_demos()
 
 list_operations()
+# Original List: [5, 10, 15, 20, 25]
+# After Adding 30: [5, 10, 15, 20, 25, 30]
+# After Removing 15: [5, 10, 20, 25, 30]
+# Sorted List (Descending): [30, 25, 20, 10, 5]
 word_operations()
+# Original List: ['apple', 'banana', 'cherry', 'date', 'avacado']
+# Words starting with 'a': 2
+# After Replacement: ['apple', 'blueberry', 'cherry', 'date', 'avacado']

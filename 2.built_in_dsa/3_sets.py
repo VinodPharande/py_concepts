@@ -69,7 +69,52 @@ def set_modifications():
     # Check if a number exists
     print("Is 5 in the set?", 5 in my_set)
 
+def sort_set_demo():
+    # Note: sets are unordered. sorted() returns a new list (not a set).
+    nums = {3, 1, 4, 2, 5}
+    print("Original set (unordered):", nums)
+    print("Sorted list from set:", sorted(nums))  # [1,2,3,4,5]
+    print("Sorted descending:", sorted(nums, reverse=True))  # [5,4,3,2,1]
+
+    words = {"banana", "apple", "cherry"}
+    print("Sorted words (alphabetical):", sorted(words))  # ['apple','banana','cherry']
+    print("Sorted words by length:", sorted(words, key=len))  # sort using key function
+
+    pairs = {(1, 3), (2, 1), (1, 2)}
+    # sorted tuples: sorts by first element, then second
+    print("Sorted pairs:", sorted(pairs))  # [(1,2),(1,3),(2,1)]
+
+    # If you need an ordered, immutable sequence, convert the sorted list to a tuple
+    ordered_tuple = tuple(sorted(nums))
+    print("Ordered tuple from set:", ordered_tuple)
+
 
 
 set_operations()
+# Union: {1, 2, 3, 4, 5, 6}
+# Intersection: {3, 4}
+# Difference (set1 - set2): {1, 2}
+# Is set1 a subset of set2? False
 set_modifications()
+# Original Set: {1, 2, 3, 4, 5}
+# After Adding 6: {1, 2, 3, 4, 5, 6}
+# After Removing 3: {1, 2, 4, 5, 6}
+# Is 5 in the set? True
+sort_set_demo()
+# Original set (unordered): {3, 1, 4, 2, 5}
+# Sorted list from set: [1, 2, 3, 4, 5]
+# Sorted descending: [5, 4, 3, 2, 1]
+# Sorted words (alphabetical): ['apple','banana','cherry']
+# Sorted words by length: ['apple','banana','cherry']
+# Sorted pairs: [(1,2),(1,3),(2,1)]
+# Ordered tuple from set: (1, 2, 3, 4, 5)
+
+# set method
+# .union(): Returns a new set with elements from both sets.
+# .intersection(): Returns a new set with elements common to both sets.
+# .difference(): Returns a new set with elements in the first set but not in the second set.
+# .issubset(): Returns True if the set is a subset of another set.
+# .add(): Adds an element to the set.
+# .remove(): Removes an element from the set. Raises KeyError if the element is not found.
+# 'in' keyword: Checks if an element is present in the set, returns True or False.
+
