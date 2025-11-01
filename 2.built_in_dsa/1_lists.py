@@ -64,6 +64,7 @@ def word_operations():
     # Count words starting with 'a'
     count_a = sum(1 for word in words if word.startswith("a"))
     print("Words starting with 'a':", count_a)
+    # result: 2
     
     # Replace 'banana' with 'blueberry'
     words = ["blueberry" if word == "banana" else word for word in words]
